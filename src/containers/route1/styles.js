@@ -29,7 +29,7 @@ font-weight: 700;
 
 export const Users = styled.li `
 width: 342px;
-height: 101px;
+height: 120px;
 border-radius: 14px;
 background-color: rgba(255, 255, 255, 0.25);
 border: none;
@@ -55,6 +55,10 @@ button {
    &:active{
     opacity: 0.3;
    }
+   
+   img {
+    background: none;
+   }
 }
 
 p {
@@ -65,6 +69,8 @@ font-style: normal;
 font-weight: 300;
 line-height: normal;
 margin-top: 17px;
+background: none;
+margin-left: 17px;
 
 }
 
@@ -72,7 +78,16 @@ b {
 
     font-weight: 700;
     font-size: 18px;
-
+    background-color: transparent;
 }
 `
 
+export const P = styled.p`
+    color: #FFF;
+
+font-size: 18px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+margin-top: 17px;
+`

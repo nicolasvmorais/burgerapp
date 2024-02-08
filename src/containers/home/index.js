@@ -50,7 +50,7 @@ function Home() {
         <Input ref={inputOrder} />
         <P>Nome do Cliente</P>
         <Input ref={inputName} />
-        <Button  onClick={addNewOrders}>Novo Pedido</Button>
+        <Button to="/orders" onClick={addNewOrders}>Novo Pedido</Button>
       </ContainerInput>
     </Containeritems>
   );

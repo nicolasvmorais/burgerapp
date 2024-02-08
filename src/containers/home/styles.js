@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Image from "../../img/homeburger.png"
+import { Link } from "react-router-dom";
 
 export const Containeritems = styled.div`
   background-color: #0a0a10;
@@ -16,7 +17,7 @@ export const Containeritems = styled.div`
 export const ContainerInput = styled.div `
 display: flex;
 flex-direction: column;
-width: 414px;
+
 
 `
 
@@ -46,7 +47,7 @@ background: rgba(255, 255, 255, 0.25);
 margin-bottom: 42px;
 `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
 display: flex;
 width: 342px;
 height: 68px;
@@ -55,9 +56,11 @@ justify-content: center;
 align-items: center;
 background: #D93856;
 border: none;
-margin-left: 36px;
 cursor: pointer;
-
+text-decoration:none;
+color: white;
+font-weight: 900;
+margin-bottom: 20px;
 &:hover{
   opacity: 0.9;
 }

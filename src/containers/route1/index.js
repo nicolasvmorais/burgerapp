@@ -1,7 +1,8 @@
 import burger from "../../img/route1.png"
 import trash from "../../img/18297 4.svg"
-import { H1,MainContainer,Image,Users } from "./styles";
-import { useEffect,React } from "react";
+import { H1,MainContainer,Image,Users,P } from "./styles";
+import { useEffect,React,useState } from "react";
+import axios from "axios";
 
 function Orders() {
   
@@ -18,7 +19,7 @@ function Orders() {
 
   async function deleteInfo(userId) {
     
-    await axios.delete(`http://localhost:3001/order/${userId}`)
+    await axios.delete(`http://localhost:3002/orders/${userId}`)
     
     const updatedUsers = users.filter((user) => user.id !== userId);
     setUsers(updatedUsers);
@@ -29,13 +30,13 @@ function Orders() {
       <Image src={burger} alt="logo" />
         <H1>Pedidos</H1>
         <ul>
-          {users.map((user) => (
-            <User key={user.id}>
-              <p>{user.name}</p> <p>{user.age}</p>
-              <button onClick={() => deleteInfo(user.id)}>
-                <img alt="trash can" src={Trash}></img>
+        {users.map((user) => (
+            <Users key={user.id}>
+              <P>{user.clientName}</P> <P><b>{user.orderName}</b></P>
+              <button to="/" onClick={() => deleteInfo(user.id)}>
+                <img alt="trash can" src={trash}></img>
               </button>
-            </User>
+            </Users>
           ))}
         </ul>
      </MainContainer>
